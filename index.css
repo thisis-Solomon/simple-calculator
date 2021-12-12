@@ -1,0 +1,69 @@
+*, *::after, *::before{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+}
+
+.grid{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: minmax(8rem, auto) repeat(5, 5rem);
+    gap: .2rem;
+    align-content: center;
+    justify-content: center;
+}
+
+.output{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    background: rgba(24, 20, 20, 0.582);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: .5rem;
+    font-size: 1.3rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.span-col-2{
+    grid-column: span 2;
+}
+
+.grid button[data-delete]{
+    background: rgba(220, 20, 60, 0.979);
+}
+
+.grid button[data-operation]{
+    background: rgba(65, 30, 30, 0.849);
+    color: antiquewhite;
+    font-size: large;
+    font-weight: bold;
+}
+
+.grid button[data-number]{
+    background: skyblue;
+    font-size: x-large;
+}
+
+.grid button[data-clear-all]{
+}
+
+.grid > button{
+    font-weight: bold;
+    outline: none;
+    border: none;
+    transform: scale(1.03);
+    transition: transform .3s ease;
+}
+
+.grid > button:active{
+    transform: scale(1);
+    transition: transform .3s ease;
+}
